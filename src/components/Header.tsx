@@ -59,7 +59,7 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center px-[20px] py-[10px]">
             <img src="/lovable-uploads/logosemfundo.png" alt="Comando Contabilidade" className="h-14 md:h-16" />
           </Link>
           
