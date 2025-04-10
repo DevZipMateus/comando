@@ -110,6 +110,11 @@
   .section-padding {
     @apply py-6 md:py-10;
   }
+  
+  /* Added for left-aligned plan features */
+  .plan-feature {
+    @apply flex items-start text-left;
+  }
 }
 
 @keyframes fadeIn {
@@ -226,4 +231,13 @@
   margin: 0 auto;
   padding: 0;
   text-align: center;
+}
+
+/* Fix for plan features text alignment */
+.plan-list li {
+  text-align: left !important;
+}
+
+.plan-list li div {
+  justify-content: flex-start !important;
 }

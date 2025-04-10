@@ -49,13 +49,13 @@ const AboutSection = () => {
               <span className="inline-block py-1 px-3 rounded-full text-sm font-medium bg-primary-100 text-primary-700 mb-3">
                 Sobre Nós
               </span>
-              <h2 className="heading-lg mb-3">
+              <h2 className="heading-lg mb-3 text-left">
                 Serviços contábeis <span className="text-primary-700">simplificados</span>
               </h2>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 mb-4 text-left">
                 Fundado em 2017, o Comando Contabilidade nasceu da paixão por números e da vontade de ajudar empresários a alcançarem seus objetivos. Desde o início, nosso compromisso foi oferecer serviços contábeis de excelência, combinando conhecimento técnico com um atendimento próximo e humanizado.
               </p>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 mb-4 text-left">
                 Com o crescimento do nosso escritório, expandimos nossa equipe e aprimoramos nossos serviços, sempre acompanhando as mudanças no cenário econômico e as necessidades dos nossos clientes. Ao longo dos anos, construímos relacionamentos duradouros, pautados na confiança e na transparência, tornando-nos um parceiro estratégico para empresas de diversos setores.
               </p>
             </div>
@@ -64,7 +64,7 @@ const AboutSection = () => {
               {advantages.map((advantage, index) => (
                 <div key={index} className="flex items-start opacity-0 animate-element">
                   <CheckCircle className="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0" />
-                  <p className="ml-3 text-gray-700">{advantage}</p>
+                  <p className="ml-3 text-gray-700 text-left">{advantage}</p>
                 </div>
               ))}
             </div>
@@ -74,8 +74,13 @@ const AboutSection = () => {
             <div className="relative">
               <div className="absolute -left-4 -top-4 w-24 h-24 bg-primary-200 rounded-lg opacity-50"></div>
               <div className="absolute -right-4 -bottom-4 w-32 h-32 bg-primary-100 rounded-lg opacity-30"></div>
-              <div className="relative overflow-hidden rounded-xl shadow-md">
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80" alt="Equipe de contabilidade" className="w-full h-auto object-cover" loading="lazy" />
+              <div className="relative overflow-hidden rounded-xl shadow-md flex items-center justify-center p-5">
+                <img 
+                  src="/lovable-uploads/3acf21ec-7ac5-428c-860f-7af3dbba060b.png" 
+                  alt="Comando Contabilidade" 
+                  className="w-full max-w-md h-auto object-contain" 
+                  loading="lazy" 
+                />
               </div>
             </div>
           </div>

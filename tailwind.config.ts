@@ -1,5 +1,5 @@
 
-import { fontFamily } from "tailwindcss/defaultTheme";
+import { fontFamily } from "tailwindcss/defaultThemes";
 import type { Config } from "tailwindcss";
 
 const config = {
@@ -36,17 +36,17 @@ const config = {
           900: "#062625",
         },
         secondary: {
-          DEFAULT: "#111A23", // Azul escuro do logo
+          DEFAULT: "#0f1a25", // Azul escuro do logo atualizado
           foreground: "var(--secondary-foreground)",
-          50: "#e5e7e9",
-          100: "#cccfd2",
-          200: "#9a9fa6",
-          300: "#676e79",
-          400: "#353e4d",
-          500: "#111A23",
-          600: "#0e151c",
-          700: "#0a1015",
-          800: "#070a0e",
+          50: "#e6e8ea",
+          100: "#ccd0d4",
+          200: "#99a1a9",
+          300: "#66737f",
+          400: "#334454",
+          500: "#0f1a25",
+          600: "#0c151e",
+          700: "#091016",
+          800: "#060a0f",
           900: "#030507",
         },
         destructive: {

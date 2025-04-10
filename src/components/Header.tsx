@@ -77,7 +77,7 @@ const Header = () => {
   return (
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-sm py-2' : 'bg-transparent py-3'}`}>
       {/* Top bar with contact info and social media links */}
-      <div className="text-white py-2 hidden md:block bg-primary-600">
+      <div className="text-white py-2 hidden md:block bg-secondary-600">
         <div className="container mx-auto px-4 flex justify-between items-center">
           <div className="flex items-center space-x-4">
             <a href="mailto:contato.comandoempreendimentos@gmail.com" className="flex items-center text-sm hover:text-primary-100 transition-colors">
@@ -103,12 +103,12 @@ const Header = () => {
       {/* Main navigation */}
       <div className={`container mx-auto px-4 ${isScrolled ? 'bg-white' : ''}`}>
         <div className="flex justify-between items-center">
-          {/* Logo */}
+          {/* Logo - Increased size */}
           <Link to="/" className="flex items-center">
             <img 
               src="/lovable-uploads/3acf21ec-7ac5-428c-860f-7af3dbba060b.png" 
               alt="Comando Contabilidade" 
-              className="h-10 md:h-12"
+              className="h-14 md:h-16" 
             />
           </Link>
           

@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { Instagram, Mail, Phone, MapPin, ArrowUp } from 'lucide-react';
 
@@ -19,7 +18,7 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/3acf21ec-7ac5-428c-860f-7af3dbba060b.png" 
                 alt="Comando Contabilidade" 
-                className="h-10"
+                className="h-16"
               />
             </Link>
             <p className="text-gray-700 mb-5 leading-relaxed text-sm md:text-base">
