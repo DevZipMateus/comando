@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const serviceDetails = [
   {

@@ -5,7 +5,7 @@ import FloatingButton from "@/components/FloatingButton";
 import ContactForm from "@/components/ContactForm";
 import { MapPin } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);

@@ -7,7 +7,7 @@ import AboutSection from "@/components/AboutSection";
 import { CheckCircle, Clock, Award, Users, TrendingUp, Building, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
