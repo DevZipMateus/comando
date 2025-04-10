@@ -1,16 +1,13 @@
-
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Mail, Phone, Instagram, MapPin } from 'lucide-react';
 import { useMobile } from '@/hooks/use-mobile';
-
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
   const isMobile = useMobile();
   const location = useLocation();
-
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
@@ -38,12 +35,10 @@ const Header = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
   useEffect(() => {
     // Close mobile menu when route changes
     setIsMenuOpen(false);
   }, [location.pathname]);
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -60,9 +55,7 @@ const Header = () => {
   const getLinkColor = path => {
     return 'text-white hover:text-primary-300';
   };
-
-  return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-[#0f1a25] ${isScrolled ? 'py-2 shadow-md' : 'py-3'}`}>
+  return <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-[#0f1a25] ${isScrolled ? 'py-2 shadow-md' : 'py-3'}`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
@@ -97,12 +90,8 @@ const Header = () => {
             
             {/* Adding client area button */}
             <div className="flex items-center space-x-3">
-              <Link to="/contact" className="px-4 py-2 rounded-full border border-primary-500 text-white text-sm hover:bg-primary-500/10 transition-all">
-                Área do Cliente <span className="ml-1">→</span>
-              </Link>
-              <Link to="/contact" className="px-4 py-2 rounded-full bg-primary-500 text-white text-sm hover:bg-primary-400 transition-all">
-                Abrir MEI <span className="ml-1">→</span>
-              </Link>
+              
+              
             </div>
           </nav>
           
@@ -114,8 +103,7 @@ const Header = () => {
       </div>
       
       {/* Mobile Menu */}
-      {isMenuOpen && isMobile && (
-        <div className="fixed inset-0 bg-[#0f1a25] z-50 pt-16">
+      {isMenuOpen && isMobile && <div className="fixed inset-0 bg-[#0f1a25] z-50 pt-16">
           <div className="container mx-auto px-4">
             <nav>
               <ul className="flex flex-col space-y-4">
@@ -182,10 +170,7 @@ const Header = () => {
               <X className="w-6 h-6" />
             </button>
           </div>
-        </div>
-      )}
-    </header>
-  );
+        </div>}
+    </header>;
 };
-
 export default Header;
