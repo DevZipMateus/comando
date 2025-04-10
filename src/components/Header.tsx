@@ -2,14 +2,12 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Mail, Phone, Instagram, MapPin } from 'lucide-react';
 import { useMobile } from '@/hooks/use-mobile';
-
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
   const isMobile = useMobile();
   const location = useLocation();
-
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
@@ -17,7 +15,6 @@ const Header = () => {
       } else {
         setIsScrolled(false);
       }
-
       const sections = ['hero', 'services', 'about', 'team', 'plans', 'testimonials', 'contact'];
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -36,31 +33,26 @@ const Header = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
   useEffect(() => {
     setIsMenuOpen(false);
   }, [location.pathname]);
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
   const sectionToNavMap = {
     'hero': '/',
     'services': '/services',
     'about': '/about',
     'contact': '/contact'
   };
-
   const getLinkColor = path => {
     return 'text-white hover:text-primary-300';
   };
-
   return <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-[#0f1a25] ${isScrolled ? 'py-2 shadow-md' : 'py-3'}`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center">
-            <img src="https://www.commei.com.br/images/logo.png" alt="Comando Contabilidade" className="h-28 md:h-32" />
+            <img src="https://www.commei.com.br/images/logo.png" alt="Comando Contabilidade" className="h-16 md:h-16" />
           </Link>
           
           <nav className="hidden md:flex items-center">
@@ -166,5 +158,4 @@ const Header = () => {
         </div>}
     </header>;
 };
-
 export default Header;
