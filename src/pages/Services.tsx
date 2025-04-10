@@ -114,7 +114,7 @@ const Services = () => {
       <main>
         <section className="pt-20 pb-8 md:pt-28 md:pb-12 bg-gradient-to-b from-primary-50 to-white">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
+            <div className="max-w-4xl mx-auto text-left">
               <span className={cn(
                 "inline-block py-1 px-3 rounded-full text-sm font-medium bg-primary-100 text-primary-700 mb-4 opacity-0",
                 isVisible && "animate-fadeIn"
@@ -122,19 +122,19 @@ const Services = () => {
                 Nossos Serviços
               </span>
               <h1 className={cn(
-                "heading-xl mb-4 opacity-0",
+                "heading-xl mb-4 opacity-0 text-left",
                 isVisible && "animate-slideDown"
               )}>
                 Soluções contábeis <span className="text-gradient">inteligentes</span> para cada necessidade
               </h1>
               <p className={cn(
-                "subtitle mx-auto mb-6 opacity-0",
+                "subtitle mx-auto mb-6 opacity-0 text-left",
                 isVisible && "animate-slideDown delay-200"
               )}>
                 Oferecemos serviços contábeis completos, personalizados para atender às necessidades 
                 específicas do seu negócio.
               </p>
-              <div className={cn("opacity-0", isVisible && "animate-slideDown delay-400")}>
+              <div className={cn("opacity-0 text-left", isVisible && "animate-slideDown delay-400")}>
                 <Link to="/contact">
                   <Button variant="default" size="lg" className="rounded-full">
                     Solicitar orçamento
@@ -148,7 +148,7 @@ const Services = () => {
         
         <section className="py-8 md:py-12 bg-white">
           <div className="container mx-auto px-4">
-            <h2 className="heading-lg text-center mb-8">Conheça nossos serviços em detalhes</h2>
+            <h2 className="heading-lg text-left mb-8">Conheça nossos serviços em detalhes</h2>
             
             <div className="grid lg:grid-cols-2 gap-6 mb-10">
               {serviceDetails.map((service, index) => (
@@ -162,17 +162,17 @@ const Services = () => {
                   )}
                 >
                   <div className="flex flex-col md:flex-row md:items-start mb-4 md:mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center mb-3 md:mb-0 md:mr-4 mx-auto md:mx-0">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center mb-3 md:mb-0 md:mr-4">
                       <service.icon className="w-6 h-6 text-primary-700" />
                     </div>
-                    <div className="text-center md:text-left">
+                    <div className="text-left">
                       <h3 className="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
                       <p className="text-gray-600 text-sm md:text-base">{service.description}</p>
                     </div>
                   </div>
                   
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-3 text-center md:text-left">O que incluímos:</h4>
+                  <div className="text-left">
+                    <h4 className="text-lg font-semibold text-gray-900 mb-3">O que incluímos:</h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       {service.features.map((feature, i) => (
                         <div key={i} className="flex items-start">
@@ -186,7 +186,7 @@ const Services = () => {
               ))}
             </div>
             
-            <div className="text-center mt-8">
+            <div className="text-left mt-8">
               <Link to="/contact">
                 <Button variant="default" size="lg" className="rounded-full">
                   Solicitar orçamento

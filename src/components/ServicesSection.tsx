@@ -71,7 +71,7 @@ const ServicesSection = () => {
   return (
     <section className="py-16 bg-gradient-to-b from-white to-primary-50" id="services">
       <div className="container mx-auto px-4" ref={sectionRef}>
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-left max-w-3xl mx-auto mb-12">
           <span className="inline-block py-1 px-3 rounded-full text-sm font-medium bg-primary-100 text-primary-700 mb-3">
             Nossos Serviços
           </span>
@@ -97,10 +97,10 @@ const ServicesSection = () => {
               <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center mb-5">
                 <service.icon className="w-6 h-6 text-primary-700" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
-              <p className="text-gray-600 mb-4">{service.description}</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-3 text-left">{service.title}</h3>
+              <p className="text-gray-600 mb-4 text-left">{service.description}</p>
               <Link to="/services" className="mt-auto">
-                <Button variant="link" className="p-0 h-auto text-primary-600 hover:text-primary-700">
+                <Button variant="link" className="p-0 h-auto text-primary-600 hover:text-primary-700 text-left">
                   Saiba mais
                 </Button>
               </Link>
@@ -108,7 +108,7 @@ const ServicesSection = () => {
           ))}
         </div>
         
-        <div className="text-center mt-8">
+        <div className="text-left mt-8">
           <Link to="/services">
             <Button variant="outline" size="lg" className="rounded-full">
               Ver todos os serviços
