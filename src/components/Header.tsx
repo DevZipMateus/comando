@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Mail, Phone, Instagram, MapPin } from 'lucide-react';
@@ -58,9 +59,9 @@ const Header = () => {
   return <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-[#0f1a25] ${isScrolled ? 'py-2 shadow-md' : 'py-3'}`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
-          {/* Logo */}
+          {/* Logo - Increased size */}
           <Link to="/" className="flex items-center">
-            <img src="/lovable-uploads/logosemfundo.png" alt="Comando Contabilidade" className="h-14 md:h-16" />
+            <img src="/lovable-uploads/logosemfundo.png" alt="Comando Contabilidade" className="h-20 md:h-24" />
           </Link>
           
           {/* Desktop Navigation */}
