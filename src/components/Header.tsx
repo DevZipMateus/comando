@@ -61,7 +61,7 @@ const Header = () => {
         <div className="flex justify-between items-center">
           {/* Logo - Increased size */}
           <Link to="/" className="flex items-center">
-            <img src="/lovable-uploads/logosemfundo.png" alt="Comando Contabilidade" className="h-20 md:h-24" />
+            <img src="/lovable-uploads/logosemfundo.png" alt="Comando Contabilidade" className="h-24 md:h-28" />
           </Link>
           
           {/* Desktop Navigation */}
