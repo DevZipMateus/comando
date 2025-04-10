@@ -1,16 +1,13 @@
-
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Mail, Phone, Instagram, MapPin } from 'lucide-react';
 import { useMobile } from '@/hooks/use-mobile';
-
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
   const isMobile = useMobile();
   const location = useLocation();
-  
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
@@ -18,7 +15,7 @@ const Header = () => {
       } else {
         setIsScrolled(false);
       }
-      
+
       // Check which section is currently visible
       const sections = ['hero', 'services', 'about', 'team', 'plans', 'testimonials', 'contact'];
       for (const section of sections) {
@@ -33,22 +30,19 @@ const Header = () => {
         }
       }
     };
-    
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-  
   useEffect(() => {
     // Close mobile menu when route changes
     setIsMenuOpen(false);
   }, [location.pathname]);
-  
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-  
+
   // Map sections to their corresponding navigation links
   const sectionToNavMap = {
     'hero': '/',
@@ -56,26 +50,22 @@ const Header = () => {
     'about': '/about',
     'contact': '/contact'
   };
-  
+
   // Function to determine link color based on active section and current route
-  const getLinkColor = (path) => {
+  const getLinkColor = path => {
     // On routes other than homepage, use simple active/inactive colors
     if (location.pathname !== '/') {
       return location.pathname === path ? 'text-primary-500' : 'text-gray-700 hover:text-primary-500';
     }
-    
+
     // On homepage, color based on active section
     const currentSection = Object.entries(sectionToNavMap).find(([_, navPath]) => navPath === path)?.[0];
-    
     if (currentSection === activeSection) {
       return 'text-primary-500';
     }
-    
     return 'text-gray-700 hover:text-primary-500';
   };
-  
-  return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-sm py-2' : 'bg-transparent py-3'}`}>
+  return <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-sm py-2' : 'bg-transparent py-3'}`}>
       {/* Top bar with contact info and social media links */}
       <div className="text-white py-2 hidden md:block bg-secondary-600">
         <div className="container mx-auto px-4 flex justify-between items-center">
@@ -105,11 +95,7 @@ const Header = () => {
         <div className="flex justify-between items-center">
           {/* Logo - Increased size */}
           <Link to="/" className="flex items-center">
-            <img 
-              src="/lovable-uploads/3acf21ec-7ac5-428c-860f-7af3dbba060b.png" 
-              alt="Comando Contabilidade" 
-              className="h-14 md:h-16" 
-            />
+            <img src="/lovable-uploads/3acf21ec-7ac5-428c-860f-7af3dbba060b.png" alt="Comando Contabilidade" className="h-14 md:h-16" />
           </Link>
           
           {/* Desktop Navigation */}
@@ -146,8 +132,7 @@ const Header = () => {
       </div>
       
       {/* Mobile Menu */}
-      {isMenuOpen && isMobile && (
-        <div className="fixed inset-0 bg-white z-50 pt-16">
+      {isMenuOpen && isMobile && <div className="fixed inset-0 bg-white z-50 pt-16">
           <div className="container mx-auto px-4">
             <nav>
               <ul className="flex flex-col space-y-4">
@@ -177,10 +162,7 @@ const Header = () => {
             <div className="mt-6 border-t border-gray-100 pt-6">
               <h3 className="text-sm font-semibold text-gray-500 mb-3">Contato</h3>
               <div className="flex flex-col space-y-3">
-                <a href="mailto:contato.comandoempreendimentos@gmail.com" className="flex items-center text-gray-700">
-                  <Mail className="w-4 h-4 mr-2 text-primary-500" />
-                  contato.comandoempreendimentos@gmail.com
-                </a>
+                
                 <a href="tel:+5581988544215" className="flex items-center text-gray-700">
                   <Phone className="w-4 h-4 mr-2 text-primary-500" />
                   (81) 98854-4215
@@ -201,18 +183,11 @@ const Header = () => {
             </div>
             
             {/* Close button for mobile menu */}
-            <button 
-              onClick={toggleMenu} 
-              className="absolute top-4 right-4 p-2 rounded-full bg-primary-100 text-primary-500 hover:bg-primary-200 transition-colors"
-              aria-label="Fechar menu"
-            >
+            <button onClick={toggleMenu} className="absolute top-4 right-4 p-2 rounded-full bg-primary-100 text-primary-500 hover:bg-primary-200 transition-colors" aria-label="Fechar menu">
               <X className="w-6 h-6" />
             </button>
           </div>
-        </div>
-      )}
-    </header>
-  );
+        </div>}
+    </header>;
 };
-
 export default Header;
