@@ -11,18 +11,17 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="pt-20 pb-10 md:pt-24 md:pb-16 bg-gradient-to-b from-scarlet-50 to-white">
+    <section className="pt-20 pb-10 md:pt-24 md:pb-16 bg-gradient-to-b from-secondary-50 to-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <span className={`inline-block py-1 px-3 rounded-full text-sm font-medium bg-scarlet-100 text-scarlet-700 mb-4 opacity-0 ${isVisible ? 'animate-fadeIn' : ''}`}>
+          <span className={`inline-block py-1 px-3 rounded-full text-sm font-medium bg-primary-100 text-primary-700 mb-4 opacity-0 ${isVisible ? 'animate-fadeIn' : ''}`}>
             Contabilidade Digital para sua Empresa
           </span>
           <h1 className={`heading-xl mb-4 opacity-0 ${isVisible ? 'animate-slideDown' : ''}`}>
-            Soluções contábeis <span className="text-gradient">simplificadas</span> para seu negócio
+            Serviços contábeis <span className="text-gradient">simplificados</span> para seu negócio
           </h1>
           <p className={`subtitle mx-auto mb-6 opacity-0 ${isVisible ? 'animate-slideDown delay-200' : ''}`}>
-            Entre em contato agora mesmo e solicite um orçamento para sua empresa.
-            Oferecemos serviços contábeis de forma simples e eficiente.
+            Desde nossa fundação, nos dedicamos a oferecer serviços contábeis de qualidade com simplicidade e transparência para empresas de todos os tamanhos.
           </p>
           <div className={`flex flex-col sm:flex-row justify-center gap-4 opacity-0 ${isVisible ? 'animate-slideDown delay-300' : ''}`}>
             <Link to="/contact" className="button-primary group">

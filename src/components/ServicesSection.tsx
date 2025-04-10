@@ -1,33 +1,33 @@
 
 import { useEffect, useRef } from 'react';
-import { Calculator, FileText, Briefcase, Building2 } from 'lucide-react';
+import { Calculator, FileText, Briefcase, Users } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
 const services = [
   {
-    title: "Contabilidade",
-    description: "Nossos serviços de contabilidade são especializados para atender às necessidades legais da sua empresa com precisão e pontualidade.",
-    icon: Calculator,
+    title: "Abertura de Empresa",
+    description: "Auxiliamos na estruturação adequada do seu negócio, cuidando de toda a burocracia e orientando sobre a melhor estrutura para sua empresa.",
+    icon: Briefcase,
     delay: 0
   },
   {
-    title: "Fiscal",
-    description: "Oferecemos assessoria completa para o cumprimento de todas as obrigações fiscais da sua empresa, minimizando riscos de penalidades.",
+    title: "Imposto de Renda",
+    description: "Facilitamos o cumprimento das obrigações fiscais, com preenchimento correto das declarações e orientações para maximizar sua restituição.",
     icon: FileText,
     delay: 100
   },
   {
-    title: "Abertura de Empresa",
-    description: "Auxiliamos na estruturação societária adequada ao seu negócio, visando economia tributária e eficiência operacional.",
-    icon: Briefcase,
+    title: "BPO Financeiro",
+    description: "Terceirizamos a gestão financeira da sua empresa, proporcionando maior controle, organização e eficiência para seu negócio.",
+    icon: Calculator,
     delay: 200
   },
   {
-    title: "Societário",
-    description: "Nossos serviços societários abrangem todas as questões legais junto a órgãos públicos e privados para sua tranquilidade.",
-    icon: Building2,
+    title: "Folha de Pagamento",
+    description: "Cuidamos de todos os procedimentos relacionados à gestão de pessoas, garantindo conformidade com a legislação trabalhista.",
+    icon: Users,
     delay: 300
   }
 ];
@@ -69,10 +69,10 @@ const ServicesSection = () => {
   }, []);
 
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-scarlet-50" id="services">
+    <section className="py-16 bg-gradient-to-b from-white to-primary-50" id="services">
       <div className="container mx-auto px-4" ref={sectionRef}>
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="inline-block py-1 px-3 rounded-full text-sm font-medium bg-scarlet-100 text-scarlet-700 mb-3">
+          <span className="inline-block py-1 px-3 rounded-full text-sm font-medium bg-primary-100 text-primary-700 mb-3">
             Nossos Serviços
           </span>
           <h2 className="heading-lg mb-4">
@@ -90,17 +90,17 @@ const ServicesSection = () => {
               key={index} 
               className={cn(
                 "service-card p-6 rounded-xl transition-all duration-300",
-                "bg-white border border-scarlet-100 hover:border-scarlet-300",
-                "hover:shadow-md hover:-translate-y-1 flex flex-col items-start"
+                "bg-white border border-primary-100 hover:border-primary-300",
+                "hover:shadow-md hover:-translate-y-1 flex flex-col items-start opacity-0"
               )}
             >
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-scarlet-100 to-scarlet-200 flex items-center justify-center mb-5">
-                <service.icon className="w-6 h-6 text-scarlet-700" />
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center mb-5">
+                <service.icon className="w-6 h-6 text-primary-700" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
               <p className="text-gray-600 mb-4">{service.description}</p>
               <Link to="/services" className="mt-auto">
-                <Button variant="link" className="p-0 h-auto">
+                <Button variant="link" className="p-0 h-auto text-primary-600 hover:text-primary-700">
                   Saiba mais
                 </Button>
               </Link>
