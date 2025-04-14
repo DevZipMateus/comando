@@ -5,16 +5,12 @@ import ContactForm from "@/components/ContactForm";
 import { MapPin } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
-
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
-
   useEffect(() => {
     setIsVisible(true);
   }, []);
-
-  return (
-    <div className="min-h-screen bg-white">
+  return <div className="min-h-screen bg-white">
       <Helmet>
         <title>Contato | Comando Contabilidade</title>
         <meta name="description" content="Entre em contato com a Comando Contabilidade. Estamos prontos para atender suas necessidades contábeis em Recife-PE." />
@@ -31,10 +27,7 @@ const Contact = () => {
               <h1 className={`text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight mb-2 md:mb-3 opacity-0 ${isVisible ? 'animate-slideDown' : ''}`}>
                 Entre em <span className="text-gradient">contato</span> conosco
               </h1>
-              <p className={`text-sm md:text-lg text-gray-600 mx-auto mb-2 md:mb-3 opacity-0 ${isVisible ? 'animate-slideDown delay-200' : ''}`}>
-                Estamos prontos para atender suas necessidades contábeis. Entre em contato por telefone, 
-                e-mail ou WhatsApp para uma consultoria personalizada.
-              </p>
+              
             </div>
           </div>
         </section>
@@ -47,8 +40,6 @@ const Contact = () => {
       </main>
       <Footer />
       <FloatingButton />
-    </div>
-  );
+    </div>;
 };
-
 export default Contact;
