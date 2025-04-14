@@ -117,12 +117,8 @@ const Header = () => {
             </nav>
             
             <div className="mt-6 flex flex-col space-y-3">
-              <Link to="/contact" className="px-4 py-3 rounded-md border border-primary-500 text-white text-center">
-                Área do Cliente <span className="ml-1">→</span>
-              </Link>
-              <Link to="/contact" className="px-4 py-3 rounded-md bg-primary-500 text-white text-center">
-                Abrir MEI <span className="ml-1">→</span>
-              </Link>
+              
+              
             </div>
             
             <div className="mt-6 border-t border-gray-700 pt-6">
