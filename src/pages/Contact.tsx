@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButton from "@/components/FloatingButton";
@@ -44,45 +43,7 @@ const Contact = () => {
           <ContactForm />
         </div>
         
-        <section className="py-6 md:py-8 bg-primary-50">
-          <div className="container mx-auto px-4">
-            <div className="max-w-5xl mx-auto">
-              <h2 className="text-xl md:text-3xl font-bold text-gray-900 tracking-tight text-center mb-4 md:mb-6">Como chegar</h2>
-              
-              <div className="bg-white rounded-xl overflow-hidden shadow-sm">
-                <div className="w-full h-48 md:h-72">
-                  <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.6033724691754!2d-34.93434038852565!3d-8.04266389195805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab1be266a4995f%3A0x73cb7572c82f91d6!2sR.%20Dr.%20Tel%C3%A9sforo%20Fragoso%2C%20791%20-%20San%20Martin%2C%20Recife%20-%20PE%2C%2050761-030!5e0!3m2!1spt-BR!2sbr!4v1649260596532!5m2!1spt-BR!2sbr" 
-                    width="100%" 
-                    height="100%" 
-                    style={{ border: 0 }} 
-                    allowFullScreen 
-                    loading="lazy"
-                    title="Mapa do escritório"
-                    aria-label="Localização da Comando Contabilidade em Recife-PE"
-                  ></iframe>
-                </div>
-                <div className="p-3 md:p-5 flex flex-col md:flex-row md:items-start">
-                  <div className="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center mb-3 md:mb-0 md:mr-4 mx-auto md:mx-0">
-                    <MapPin className="w-6 h-6 text-primary-600" />
-                  </div>
-                  <div className="text-center md:text-left">
-                    <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">Nosso Escritório</h3>
-                    <p className="text-sm md:text-base text-gray-600">
-                      Rua Doutor Telesphoro Fragoso, 791<br />
-                      San Martin, Recife-PE<br />
-                      CEP: 50.761-030
-                    </p>
-                    <p className="text-sm md:text-base text-gray-600 mt-3">
-                      <strong>Horário de Atendimento:</strong><br />
-                      Segunda a Sexta: 08:00 às 18:00
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        
       </main>
       <Footer />
       <FloatingButton />
