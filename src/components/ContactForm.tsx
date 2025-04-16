@@ -83,7 +83,7 @@ const ContactForm = () => {
             <div className="bg-white rounded-xl overflow-hidden shadow-md">
               <div className="w-full h-72 md:h-96">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.603626045616!2d-34.93213548451546!3d-8.042625494191208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab1be266a4995f%3A0x73cb7572c82f91d6!2sR.%20Dr.%20Tel%C3%A9sforo%20Fragoso%2C%20791%20-%20San%20Martin%2C%20Recife%20-%20PE%2C%2050761-030!5e0!3m2!1spt-BR!2sbr!4v1713492791144!5m2!1spt-BR!2sbr" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.832481423417!2d-34.933001525549235!3d-8.073370880585736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab1eb5afd74fb7%3A0xc1e3790ec758e307!2sR.%20Dr.%20Telesphoro%20Fragoso%2C%20791%20-%20San%20Martin%2C%20Recife%20-%20PE%2C%2050761-030!5e0!3m2!1spt-BR!2sbr!4v1713967986825!5m2!1spt-BR!2sbr" 
                   width="100%" 
                   height="100%" 
                   style={{border: 0}} 
