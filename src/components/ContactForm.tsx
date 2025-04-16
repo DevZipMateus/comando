@@ -1,10 +1,10 @@
+
 import { Phone, Mail, MapPin } from 'lucide-react';
+
 const ContactForm = () => {
   return <section className="py-6 md:py-10 bg-gradient-to-b from-primary-50 to-white" id="contact">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-6 md:mb-10">
-          
-          
           <p className="text-sm md:text-lg text-gray-600">
             Estamos prontos para atender suas necessidades contábeis através dos nossos canais de comunicação.
             Entre em contato por telefone, e-mail ou WhatsApp e retornaremos o mais breve possível.
@@ -80,11 +80,19 @@ const ContactForm = () => {
           </div>
           
           <div className="mt-8">
-            <div className="bg-white rounded-xl overflow-hidden shadow-sm">
-              <div className="w-full h-64 md:h-80">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.6033724691754!2d-34.93434038852565!3d-8.04266389195805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab1be266a4995f%3A0x73cb7572c82f91d6!2sR.%20Dr.%20Tel%C3%A9sforo%20Fragoso%2C%20791%20-%20San%20Martin%2C%20Recife%20-%20PE%2C%2050761-030!5e0!3m2!1spt-BR!2sbr!4v1649260596532!5m2!1spt-BR!2sbr" width="100%" height="100%" style={{
-                border: 0
-              }} allowFullScreen loading="lazy" title="Localização do escritório" aria-label="Mapa com a localização do escritório da Comando Contabilidade"></iframe>
+            <div className="bg-white rounded-xl overflow-hidden shadow-md">
+              <div className="w-full h-72 md:h-96">
+                <iframe 
+                  src="https://www.google.com/maps/place/R.+Dr.+Tel%C3%A9sforo+Fragoso,+791+-+San+Martin,+Recife+-+PE,+50761-030/@-8.042664,-34.9343404,17z/data=!3m1!4b1!4m6!3m5!1s0x7ab1be266a4995f:0x73cb7572c82f91d6!8m2!3d-8.042664!4d-34.9343404!16s%2Fg%2F11j8mzb4_ep=EgoyMDI1MDQxMy4wIKXMDSoASAFQAw%3D%3D" 
+                  width="100%" 
+                  height="100%" 
+                  style={{border: 0}} 
+                  allowFullScreen 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Localização do escritório" 
+                  aria-label="Mapa com a localização do escritório da Comando Contabilidade">
+                </iframe>
               </div>
             </div>
           </div>
@@ -92,4 +100,5 @@ const ContactForm = () => {
       </div>
     </section>;
 };
+
 export default ContactForm;
