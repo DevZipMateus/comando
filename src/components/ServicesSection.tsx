@@ -1,34 +1,137 @@
-
 import { useEffect, useRef } from 'react';
-import { Calculator, FileText, Briefcase, Users } from 'lucide-react';
+import { Calculator, FileText, Briefcase, Users, Building2, Scale, LineChart, BookOpen } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
 const services = [
   {
-    title: "Abertura de Empresa",
-    description: "Auxiliamos na estruturação adequada do seu negócio, cuidando de toda a burocracia e orientando sobre a melhor estrutura para sua empresa.",
-    icon: Briefcase,
+    title: "Contabilidade Completa",
+    description: "Serviços contábeis adaptados às necessidades específicas da sua empresa, garantindo conformidade legal, precisão e transparência.",
+    icon: Calculator,
+    features: [
+      "Lançamentos e conciliações contábeis",
+      "Elaboração de balancetes mensais",
+      "Demonstrações contábeis anuais",
+      "Balanço patrimonial",
+      "Demonstração de resultado do exercício",
+      "Análise de demonstrações financeiras",
+      "Controle de ativos e depreciações",
+      "Gestão de contas a pagar e receber"
+    ],
     delay: 0
   },
   {
-    title: "Imposto de Renda",
-    description: "Facilitamos o cumprimento das obrigações fiscais, com preenchimento correto das declarações e orientações para maximizar sua restituição.",
+    title: "Serviços Fiscais",
+    description: "Nossa equipe fiscal mantém sua empresa em conformidade com as obrigações tributárias, evitando penalidades e identificando oportunidades de economia.",
     icon: FileText,
+    features: [
+      "Apuração e declaração de impostos",
+      "Emissão e gestão de notas fiscais",
+      "Obrigações acessórias (DCTF, SPED, etc.)",
+      "Planejamento tributário",
+      "Parcelamento de débitos fiscais",
+      "Consultoria em regimes tributários",
+      "Representação junto a órgãos fiscais",
+      "Orientação em fiscalizações"
+    ],
     delay: 100
   },
   {
-    title: "BPO Financeiro",
-    description: "Terceirizamos a gestão financeira da sua empresa, proporcionando maior controle, organização e eficiência para seu negócio.",
-    icon: Calculator,
+    title: "Abertura de Empresas",
+    description: "Simplificamos o processo de abertura da sua empresa, cuidando de toda a burocracia e orientando sobre a melhor estrutura para seu negócio.",
+    icon: Briefcase,
+    features: [
+      "Elaboração de contrato social",
+      "Registro na Junta Comercial",
+      "Obtenção de CNPJ",
+      "Inscrições municipais e estaduais",
+      "Alvarás e licenças de funcionamento",
+      "Cadastros em órgãos reguladores",
+      "Orientação sobre regime tributário",
+      "Planejamento societário e sucessório"
+    ],
     delay: 200
   },
   {
-    title: "Folha de Pagamento",
-    description: "Cuidamos de todos os procedimentos relacionados à gestão de pessoas, garantindo conformidade com a legislação trabalhista.",
-    icon: Users,
+    title: "Departamento Societário",
+    description: "Cuidamos de todos os aspectos legais relacionados à estrutura societária da sua empresa, garantindo segurança jurídica e conformidade.",
+    icon: Building2,
+    features: [
+      "Alterações contratuais",
+      "Atas de assembleias e reuniões",
+      "Registro de filiais",
+      "Transformação de tipos societários",
+      "Incorporações e fusões",
+      "Cisões e reorganizações societárias",
+      "Encerramento de empresas",
+      "Consultoria em governança corporativa"
+    ],
     delay: 300
+  },
+  {
+    title: "Departamento Pessoal",
+    description: "Nossa equipe cuida de todos os processos relacionados aos seus colaboradores, garantindo conformidade trabalhista e previdenciária.",
+    icon: Users,
+    features: [
+      "Folha de pagamento",
+      "Admissões e demissões",
+      "Férias e 13º salário",
+      "Obrigações acessórias (CAGED, RAIS, etc.)",
+      "Gestão de benefícios",
+      "Cálculo de encargos sociais",
+      "Homologações sindicais",
+      "Consultoria em legislação trabalhista"
+    ],
+    delay: 400
+  },
+  {
+    title: "Consultoria Tributária",
+    description: "Oferecemos orientação estratégica para otimizar a carga tributária da sua empresa de forma legal e segura, identificando oportunidades de economia.",
+    icon: Scale,
+    features: [
+      "Análise de regimes tributários",
+      "Identificação de benefícios fiscais",
+      "Recuperação de créditos tributários",
+      "Planejamento para reorganizações",
+      "Revisão fiscal preventiva",
+      "Orientação em processos administrativos",
+      "Análise de impactos de novas legislações",
+      "Simulações de carga tributária"
+    ],
+    delay: 500
+  },
+  {
+    title: "Gestão Financeira",
+    description: "Auxiliamos na organização e controle das finanças da sua empresa, oferecendo insights valiosos para decisões estratégicas e crescimento sustentável.",
+    icon: LineChart,
+    features: [
+      "Controle de fluxo de caixa",
+      "Análise de viabilidade de investimentos",
+      "Orçamento empresarial",
+      "Gestão de custos",
+      "Indicadores financeiros",
+      "Projeções financeiras",
+      "Relatórios gerenciais",
+      "Consultoria para captação de recursos"
+    ],
+    delay: 600
+  },
+  {
+    title: "Contabilidade Consultiva",
+    description: "Vamos além dos números, oferecendo análises e insights estratégicos que ajudam a impulsionar o crescimento e o sucesso do seu negócio.",
+    icon: BookOpen,
+    features: [
+      "Análise de desempenho financeiro",
+      "Identificação de tendências e oportunidades",
+      "Apoio na tomada de decisões estratégicas",
+      "Avaliação de investimentos",
+      "Análise de viabilidade de novos negócios",
+      "Estudos de precificação",
+      "Gestão de resultados",
+      "Consultoria para expansão e crescimento"
+    ],
+    delay: 700
   }
 ];
 
@@ -42,7 +145,6 @@ const ServicesSection = () => {
         if (entry.isIntersecting) {
           entry.target.classList.add('animate-fadeIn');
           
-          // Animate cards sequentially
           const cards = document.querySelectorAll('.service-card');
           cards.forEach((card, index) => {
             setTimeout(() => {
@@ -84,7 +186,7 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
           {services.map((service, index) => (
             <div 
               key={index} 
