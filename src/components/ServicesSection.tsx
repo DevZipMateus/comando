@@ -1,13 +1,25 @@
+
 import { useEffect, useRef } from 'react';
-import { Calculator, FileText, Briefcase, Users, Building2, Scale, LineChart, BookOpen } from 'lucide-react';
+import {
+  Calculator,
+  FileText,
+  Briefcase,
+  Users,
+  Building,
+  Scale,
+  ChartLine,
+  BookOpen
+} from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
+// Serviços conforme texto enviado
 const services = [
   {
     title: "Contabilidade Completa",
-    description: "Serviços contábeis adaptados às necessidades específicas da sua empresa, garantindo conformidade legal, precisão e transparência.",
+    description:
+      "Nossos serviços contábeis são adaptados às necessidades específicas da sua empresa, garantindo conformidade legal, precisão e transparência.",
     icon: Calculator,
     features: [
       "Lançamentos e conciliações contábeis",
@@ -23,7 +35,8 @@ const services = [
   },
   {
     title: "Serviços Fiscais",
-    description: "Nossa equipe fiscal mantém sua empresa em conformidade com as obrigações tributárias, evitando penalidades e identificando oportunidades de economia.",
+    description:
+      "Nossa equipe fiscal mantém sua empresa em conformidade com as obrigações tributárias, evitando penalidades e identificando oportunidades de economia.",
     icon: FileText,
     features: [
       "Apuração e declaração de impostos",
@@ -39,7 +52,8 @@ const services = [
   },
   {
     title: "Abertura de Empresas",
-    description: "Simplificamos o processo de abertura da sua empresa, cuidando de toda a burocracia e orientando sobre a melhor estrutura para seu negócio.",
+    description:
+      "Simplificamos o processo de abertura da sua empresa, cuidando de toda a burocracia e orientando sobre a melhor estrutura para seu negócio.",
     icon: Briefcase,
     features: [
       "Elaboração de contrato social",
@@ -55,8 +69,9 @@ const services = [
   },
   {
     title: "Departamento Societário",
-    description: "Cuidamos de todos os aspectos legais relacionados à estrutura societária da sua empresa, garantindo segurança jurídica e conformidade.",
-    icon: Building2,
+    description:
+      "Cuidamos de todos os aspectos legais relacionados à estrutura societária da sua empresa, garantindo segurança jurídica e conformidade.",
+    icon: Building,
     features: [
       "Alterações contratuais",
       "Atas de assembleias e reuniões",
@@ -71,7 +86,8 @@ const services = [
   },
   {
     title: "Departamento Pessoal",
-    description: "Nossa equipe cuida de todos os processos relacionados aos seus colaboradores, garantindo conformidade trabalhista e previdenciária.",
+    description:
+      "Nossa equipe de departamento pessoal cuida de todos os processos relacionados aos seus colaboradores, garantindo conformidade trabalhista e previdenciária.",
     icon: Users,
     features: [
       "Folha de pagamento",
@@ -87,7 +103,8 @@ const services = [
   },
   {
     title: "Consultoria Tributária",
-    description: "Oferecemos orientação estratégica para otimizar a carga tributária da sua empresa de forma legal e segura, identificando oportunidades de economia.",
+    description:
+      "Oferecemos orientação estratégica para otimizar a carga tributária da sua empresa de forma legal e segura, identificando oportunidades de economia.",
     icon: Scale,
     features: [
       "Análise de regimes tributários",
@@ -103,8 +120,9 @@ const services = [
   },
   {
     title: "Gestão Financeira",
-    description: "Auxiliamos na organização e controle das finanças da sua empresa, oferecendo insights valiosos para decisões estratégicas e crescimento sustentável.",
-    icon: LineChart,
+    description:
+      "Auxiliamos na organização e controle das finanças da sua empresa, oferecendo insights valiosos para decisões estratégicas e crescimento sustentável.",
+    icon: ChartLine,
     features: [
       "Controle de fluxo de caixa",
       "Análise de viabilidade de investimentos",
@@ -119,7 +137,8 @@ const services = [
   },
   {
     title: "Contabilidade Consultiva",
-    description: "Vamos além dos números, oferecendo análises e insights estratégicos que ajudam a impulsionar o crescimento e o sucesso do seu negócio.",
+    description:
+      "Vamos além dos números, oferecendo análises e insights estratégicos que ajudam a impulsionar o crescimento e o sucesso do seu negócio.",
     icon: BookOpen,
     features: [
       "Análise de desempenho financeiro",
@@ -137,14 +156,12 @@ const services = [
 
 const ServicesSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         const [entry] = entries;
         if (entry.isIntersecting) {
           entry.target.classList.add('animate-fadeIn');
-          
           const cards = document.querySelectorAll('.service-card');
           cards.forEach((card, index) => {
             setTimeout(() => {
@@ -158,18 +175,15 @@ const ServicesSection = () => {
         threshold: 0.1
       }
     );
-
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
-
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
     };
   }, []);
-
   return (
     <section className="py-16 bg-gradient-to-b from-white to-primary-50" id="services">
       <div className="container mx-auto px-4" ref={sectionRef}>
@@ -185,11 +199,10 @@ const ServicesSection = () => {
             com foco em qualidade, eficiência e atendimento humanizado.
           </p>
         </div>
-
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
           {services.map((service, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className={cn(
                 "service-card p-6 rounded-xl transition-all duration-300",
                 "bg-white border border-primary-100 hover:border-primary-300",
@@ -201,6 +214,11 @@ const ServicesSection = () => {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3 text-left">{service.title}</h3>
               <p className="text-gray-600 mb-4 text-left">{service.description}</p>
+              <ul className="mb-2 list-disc pl-5 text-gray-700 text-sm text-left">
+                {service.features.map((feature, i) => (
+                  <li key={i}>{feature}</li>
+                ))}
+              </ul>
               <Link to="/services" className="mt-auto">
                 <Button variant="link" className="p-0 h-auto text-primary-600 hover:text-primary-700 text-left">
                   Saiba mais
@@ -209,7 +227,6 @@ const ServicesSection = () => {
             </div>
           ))}
         </div>
-        
         <div className="text-left mt-8">
           <Link to="/services">
             <Button variant="outline" size="lg" className="rounded-full">
@@ -221,5 +238,4 @@ const ServicesSection = () => {
     </section>
   );
 };
-
 export default ServicesSection;
