@@ -14,7 +14,7 @@ const NFePlus = () => {
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 leading-tight">Emissor de Notas Fiscais</h2>
             </a>
             <p className="text-lg md:text-xl text-gray-600 font-normal">
-              Emita notas fiscais de forma rápida e segura
+              Cadastre seus produtos, tributação e contatos para simplificar a emissão de notas fiscais eletrônicas.
             </p>
           </div>
           
