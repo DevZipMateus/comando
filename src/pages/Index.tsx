@@ -4,6 +4,7 @@ import ServicesSection from "@/components/ServicesSection";
 import AboutSection from "@/components/AboutSection";
 import PlansSection from "@/components/PlansSection";
 import EgestorERP from "@/components/EgestorERP";
+import NFePlus from "@/components/NFePlus";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButton from "@/components/FloatingButton";
@@ -34,6 +35,9 @@ const Index = () => {
         <div className="bg-white" id="egestor-erp">
           <EgestorERP />
         </div>
+        <div className="bg-white" id="nfe-plus">
+          <NFePlus />
+        </div>
       </main>
       <Footer />
       <FloatingButton />
@@ -42,3 +46,4 @@ const Index = () => {
 };
 
 export default Index;
+
