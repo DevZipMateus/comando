@@ -51,7 +51,7 @@ const plans = [
       "Apuração de impostos",
       "Consultoria fiscal mensal",
       "Emissão de guias fiscais",
-      "Folha de pagamento (até 10 funcionários)",
+      "Folha de pagamento (até 5 funcionários)",
       "Sistema PDV para emissão de NFC-e ilimitado",
       "Desconto em certificado digital 20%",
       "Máquina de Cartão com taxas reduzidas"
