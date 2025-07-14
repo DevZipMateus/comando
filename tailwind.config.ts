@@ -11,10 +11,23 @@ const config = {
       center: true,
       padding: "2rem",
       screens: {
+        "sm": "640px",
+        "md": "768px",
+        "lg": "1024px",
+        "xl": "1280px",
         "2xl": "1400px",
+        "3xl": "1920px",
       },
     },
     extend: {
+      screens: {
+        'fullhd': '1920px',
+        '4k': '2560px',
+      },
+      maxWidth: {
+        '8xl': '88rem',
+        '9xl': '96rem',
+      },
       colors: {
         border: "var(--border)",
         input: "var(--input)",
@@ -78,6 +91,18 @@ const config = {
       fontFamily: {
         sans: ["Inter", ...fontFamily.sans],
         display: ["Poppins", ...fontFamily.sans],
+      },
+      spacing: {
+        '18': '4.5rem',
+        '88': '22rem',
+        '128': '32rem',
+        '144': '36rem',
+      },
+      fontSize: {
+        '5xl': ['3rem', { lineHeight: '3.25rem' }],
+        '6xl': ['3.75rem', { lineHeight: '4rem' }],
+        '7xl': ['4.5rem', { lineHeight: '4.75rem' }],
+        '8xl': ['6rem', { lineHeight: '6.25rem' }],
       },
     },
   },
