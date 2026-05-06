@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Instagram, Mail, Phone, MapPin, ArrowUp } from 'lucide-react';
+import logo from '@/assets/logo-comando.png';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -16,7 +17,7 @@ const Footer = () => {
           <div>
             <Link to="/" className="flex items-center mb-4">
               <img 
-                src="/lovable-uploads/3acf21ec-7ac5-428c-860f-7af3dbba060b.png" 
+                src={logo} 
                 alt="Comando Contabilidade" 
                 className="h-16"
               />

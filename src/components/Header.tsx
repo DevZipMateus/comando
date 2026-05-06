@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Mail, Phone, Instagram, MapPin } from 'lucide-react';
 import { useMobile } from '@/hooks/use-mobile';
+import logo from '@/assets/logo-comando.png';
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -52,7 +53,7 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center">
-            <img src="https://www.commei.com.br/images/logo.png" alt="Comando Contabilidade" className="h-16 md:h-16" />
+            <img src={logo} alt="Comando Contabilidade" className="h-14 md:h-16" />
           </Link>
           
           <nav className="hidden md:flex items-center">
