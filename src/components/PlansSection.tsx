@@ -190,6 +190,9 @@ const PlansSection = () => {
             </div>
           ))}
         </div>
+        <p className="text-center text-sm text-gray-600 mt-8 italic">
+          Proposta exclusiva para empresas enquadradas no regime Simples Nacional.
+        </p>
       </div>
     </section>
   );
