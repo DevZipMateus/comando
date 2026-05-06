@@ -6,58 +6,85 @@ import { Link } from 'react-router-dom';
 const plans = [
   {
     title: "MEI",
-    subtitle: "Ideal para Microempreendedores Individuais",
+    subtitle: "Ideal para quem tem funcionários, está crescendo e precisa de apoio para superar os desafios.",
+    revenue: "Faturamento até 6k/mês",
     priceMonthly: "180,00",
     priceYearly: "150,00",
     features: [
-      "Emissão de notas fiscais",
+      "Emissão de notas fiscais Ilimitado",
       "Declaração Anual",
       "Acompanhamento básico de tributos",
       "Registro de 1 Funcionário",
-      "Máquina de Cartão com taxas reduzidas",
-      "Aplicativo para Gestão COMMEI",
-      "Dashboard e Controle de Caixa",
-      "Contas a Pagar e Receber",
-      "Clientes e Fornecedores",
-      "Produtos e Controle de Estoque"
+      "Máquina de Cartão com taxas reduzidas"
     ],
     recommended: false,
     delay: 0
   },
   {
-    title: "Para Microempresas",
+    title: "Essencial",
     subtitle: "",
-    priceMonthly: "400,00",
-    priceYearly: "360,00",
+    revenue: "Faturamento até 50k/mês",
+    priceMonthly: "405,00",
+    priceYearly: "",
     features: [
       "Apuração de impostos",
       "Consultoria fiscal mensal",
       "Emissão de guias fiscais",
-      "Folha de pagamento (até 5 funcionários)",
+      "Folha de pagamento (até 3 funcionários)",
       "Sistema PDV para emissão de NFC-e ilimitado",
-      "Desconto em certificado digital 20%",
-      "Máquina de Cartão com taxas reduzidas"
+      "Desconto em certificado digital 10%",
+      "Máquina de Cartão com taxas reduzidas",
+      "Atendimento por telefone, WhatsApp, e-mail",
+      "Emissão de certidões negativas",
+      "Alterações contratuais (mudança de endereço, inclusão de CNAES/atividades, inclusão de sócios)",
+      "Análise tributária"
     ],
-    recommended: true,
+    recommended: false,
     delay: 200
   },
   {
-    title: "Para Pequenas Empresas",
+    title: "Plus",
     subtitle: "",
-    priceMonthly: "550,00",
-    priceYearly: "450,00",
+    revenue: "Faturamento até 100k/mês",
+    priceMonthly: "540,00",
+    priceYearly: "",
     features: [
-      "Sistema PDV com gestão financeira completa",
       "Apuração de impostos",
       "Consultoria fiscal mensal",
       "Emissão de guias fiscais",
       "Folha de pagamento (até 5 funcionários)",
       "Sistema PDV para emissão de NFC-e ilimitado",
-      "Desconto em certificado digital 20%",
-      "Máquina de Cartão com taxas reduzidas"
+      "Desconto em certificado digital 30%",
+      "Máquina de Cartão com taxas reduzidas",
+      "Atendimento por telefone, WhatsApp, e-mail",
+      "Emissão de certidões negativas",
+      "Alterações contratuais (mudança de endereço, inclusão de CNAES/atividades, inclusão de sócios)",
+      "Análise tributária"
+    ],
+    recommended: true,
+    delay: 400
+  },
+  {
+    title: "Premium",
+    subtitle: "",
+    revenue: "Faturamento até 200k/mês",
+    priceMonthly: "640,00",
+    priceYearly: "",
+    features: [
+      "Apuração de impostos",
+      "Consultoria fiscal mensal",
+      "Emissão de guias fiscais",
+      "Folha de pagamento (até 10 funcionários)",
+      "Sistema PDV para emissão de NFC-e ilimitado",
+      "Desconto em certificado digital 50%",
+      "Máquina de Cartão com taxas reduzidas",
+      "Atendimento por telefone, WhatsApp, e-mail",
+      "Emissão de certidões negativas",
+      "Alterações contratuais (mudança de endereço, inclusão de CNAES/atividades, inclusão de sócios)",
+      "Análise tributária"
     ],
     recommended: false,
-    delay: 400
+    delay: 600
   }
 ];
 
@@ -105,7 +132,7 @@ const PlansSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {plans.map((plan, index) => (
             <div 
               key={index} 
@@ -122,16 +149,23 @@ const PlansSection = () => {
                 <p className="text-sm text-gray-600 mb-2">{plan.subtitle}</p>
               )}
               <div className="mb-1">
-                <div className="flex items-baseline">
-                  <span className="text-sm text-gray-500 mr-2">Contrato Mensal:</span>
-                  <span className="text-lg font-semibold">R${plan.priceMonthly}</span>
-                  <span className="text-gray-600 ml-1 text-sm">/mês</span>
-                </div>
-                <div className="flex items-baseline">
-                  <span className="text-sm text-gray-500 mr-2">Contrato Anual:</span>
-                  <span className="text-lg font-semibold text-primary-600">R${plan.priceYearly}</span>
-                  <span className="text-gray-600 ml-1 text-sm">/mês</span>
-                </div>
+                {plan.priceYearly && (
+                  <div className="flex items-baseline">
+                    <span className="text-sm text-gray-500 mr-2">Contrato Anual:</span>
+                    <span className="text-lg font-semibold text-primary-600">R${plan.priceYearly}</span>
+                    <span className="text-gray-600 ml-1 text-sm">/mês</span>
+                  </div>
+                )}
+                {plan.priceMonthly && (
+                  <div className="flex items-baseline">
+                    <span className="text-sm text-gray-500 mr-2">Contrato Mensal:</span>
+                    <span className="text-lg font-semibold">R${plan.priceMonthly}</span>
+                    <span className="text-gray-600 ml-1 text-sm">/mês</span>
+                  </div>
+                )}
+                {plan.revenue && (
+                  <p className="text-sm text-gray-600 mt-2">{plan.revenue}</p>
+                )}
               </div>
               <div className="h-px bg-gray-100 my-4"></div>
               <ul className="mb-6 space-y-2">
